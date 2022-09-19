@@ -1,6 +1,7 @@
 # Miniature Eureka - Note Taker App
 
 ## Table of Contents
+* [Live Url](#live)
 * [Description](#description)
 * [Usage](#usage)
 
