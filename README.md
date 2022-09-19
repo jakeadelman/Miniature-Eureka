@@ -11,6 +11,6 @@ Miniature Eureka is a note taker app built for taking simple notes in an intuati
 ## Usage
 If you would like to run the app locally, clone the app using ```git clone https://github.com/jakeadelman/Miniature-Eureka.git```.
 
-Use ```npm install`` to download packages locally.
+Use ```npm install``` to download packages locally.
 
-Use ``npm start``` to start the application.
+Use ```npm start``` to start the application.
