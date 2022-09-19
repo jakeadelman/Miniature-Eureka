@@ -1,30 +1,28 @@
 const express = require("express")
 const path = require("path")
 const PORT = 3000
-
 const fs = require("fs")
 const bodyParser = require('body-parser')
 const app = express()
-// app.use(express.static('public'))
 
+// use static files
 app.use('/public', express.static(path.join(__dirname, 'public')))
 
-
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
-
+// use bodyParser
 app.use(bodyParser.urlencoded({ extended: false }))
-
 app.use(bodyParser.json())
 
+// app get index.html
 app.get("/",(req,res)=>{
     res.sendFile(__dirname+"/public/index.html")
 })
 
+// app get notes.html
 app.get("/notes",(req,res)=>{
     res.sendFile(__dirname+"/public/notes.html")
 })
 
+// app get api notes
 app.get("/api/notes",(req,res)=>{
     console.log(`${req.method} recieved request for new note`)
 
@@ -38,6 +36,7 @@ app.get("/api/notes",(req,res)=>{
 
 })
 
+// app post api notes
 app.post("/api/notes",(req,res)=>{
     console.log(`${req.method} recieved request to post new note`)
     console.log(req.body)
@@ -87,6 +86,7 @@ app.post("/api/notes",(req,res)=>{
 
 })
 
+// app delete api notes id
 app.delete("/api/notes/:id",(req,res)=>{
    
     if(req.params.id){
@@ -117,6 +117,7 @@ app.delete("/api/notes/:id",(req,res)=>{
     }
 })
 
+// listen on port process env or 5000
 app.listen((process.env.PORT || 5000),()=>{
     console.log(`App listening on port ${PORT}`)
 })
