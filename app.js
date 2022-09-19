@@ -117,6 +117,6 @@ app.delete("/api/notes/:id",(req,res)=>{
     }
 })
 
-app.listen(PORT,()=>{
+app.listen((process.env.PORT || 5000),()=>{
     console.log(`App listening on port ${PORT}`)
 })
